@@ -1,0 +1,29 @@
+go.property("life_time", 0)
+
+function init(self)
+	self.life_time = 0
+	print(self.life_time)
+end
+
+
+function update(self, dt)
+	self.life_time = self.life_time + dt
+	--print(self.life_time)
+	if self.life_time > 5 then
+		--print(self.life_time)
+		go.delete()
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

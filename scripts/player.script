@@ -1,0 +1,148 @@
+local min_x = 0
+local max_x = 720
+local min_y = 0
+local max_y = 1280
+
+local speed = 5
+local max_speed = 200
+local frequency = 2
+
+color_r = vmath.vector4(1, 0, 0, 1)
+color_g = vmath.vector4(0, 1, 0, 1)
+color_b = vmath.vector4(0, 0, 1, 1)
+color_y = vmath.vector4(1, 1, 0, 1)
+cur_color = vmath.vector4(0, 0, 1, 1)
+
+weapon = 1
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	particlefx.play("#rocket_fire")
+	--go.animate(".", "position.x", go.PLAYBACK_LOOP_PINGPONG, 600, go.EASING_INOUTSINE, 3)
+	--self.moving = false
+	--[[
+	local rocket_ids = collectionfactory.create("#rocket_factory", vmath.vector3(500, 500, 0))
+	local rocket_ids_2 = collectionfactory.create("#rocket_factory", vmath.vector3(100, 500, 0))
+	local rocket_ids_3 = collectionfactory.create("#rocket_factory", vmath.vector3(400, 800, 0))
+	pprint(rocket_ids)
+	pprint(rocket_ids_3)
+	]]--
+	--particlefx.play("/collection2/rocket/#rocket_fire")
+	self.timer = 2
+	-- make the game deterministic
+	math.randomseed(0)
+end
+
+local function landed(self)
+	self.moving = false
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.timer = self.timer - dt
+	if self.timer <= 0 then
+		self.timer = frequency
+		shoot()
+	end
+end
+
+
+function shoot()
+	-- weapon
+	rand_weapon = math.random(0, 100) 
+	if  rand_weapon < 30 then
+		weapon = 1
+	elseif  rand_weapon < 60 then
+		weapon = 2
+	elseif  rand_weapon < 90 then
+		weapon = 3
+	else			
+		weapon = 1
+	end
+	-- color
+	rand_color = math.random(0, 120) 
+	if  rand_color < 30 then
+		cur_color = color_r
+	elseif  rand_color < 60 then
+		cur_color = color_g
+	elseif  rand_color < 90 then
+		cur_color = color_b
+	else			
+		cur_color = color_y
+	end
+	local props = { health = 100, init_speed = math.random(3, 12), cur_color = cur_color }
+	--pprint(props)
+	local player_pos = go.get_position()
+	if weapon == 3 then
+		local new_star1 = factory.create("#rocket_factory", player_pos, nil, props, vmath.vector3(0.6))
+		player_pos.x  = player_pos.x - 32
+		local new_star2 = factory.create("#rocket_factory", player_pos, nil, props, vmath.vector3(0.6))
+		player_pos.x  = player_pos.x + 64
+		local new_star3 = factory.create("#rocket_factory", player_pos, nil, props, vmath.vector3(0.6))
+	elseif weapon == 2 then
+		player_pos.x  = player_pos.x - 32
+		local new_star1 = factory.create("#rocket_factory", player_pos, nil, props, vmath.vector3(0.6))
+		player_pos.x  = player_pos.x + 64
+		local new_star2 = factory.create("#rocket_factory", player_pos, nil, props, vmath.vector3(0.6))
+	else
+		local new_star1 = factory.create("#rocket_factory", player_pos, nil, props, vmath.vector3(0.6))
+	end
+	
+end
+
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Learn more: https://defold.com/manuals/message-passing/
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	local p = go.get_position()
+	if action_id == hash("up") then	
+		p.y = p.y + self.speed
+	elseif action_id == hash("down") then
+		p.y = p.y - self.speed
+	elseif action_id == hash("left") then
+		p.x = p.x - self.speed
+	elseif action_id == hash("right") then
+		p.x = p.x + self.speed
+	
+--[[	if action_id == hash("touch") and action.pressed then
+		if not self.moving then
+			self.moving = true
+			pos = vmath.vector3(action.x, action.y, 0)
+			go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, pos, go.EASING_LINEAR, 0.4, 0, landed)
+		end
+	end
+	]]--
+	elseif action_id == hash("touch") then
+		-- let game object follow mouse/touch movement
+		p = vmath.vector3(action.x, action.y, 0)
+	end
+
+	-- boundary
+	if p.x < min_x then
+		p.x = min_x
+	elseif p.x > max_x then
+		p.x = max_x
+	end
+	if p.y < min_y then
+		p.y = min_y
+	elseif p.y > max_y then
+		p.y = max_y
+	end
+		
+	go.set_position(p)
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end

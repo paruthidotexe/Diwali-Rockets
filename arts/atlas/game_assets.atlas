@@ -1,0 +1,63 @@
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/bg_sky_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/rock_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/rock_02.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/rock_03.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/star_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/planet_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/planet_02.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/planet_03.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/planet_04.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/planet_05.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space_bg_verical/Space_BG_02/Layers/planet_06.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/crackers/rocket_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/ball.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/floor_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/block_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+margin: 4
+extrude_borders: 2
+inner_padding: 0

@@ -1,0 +1,48 @@
+color_yellow = vmath.vector4(1, 1, 0, 1)
+color_red = vmath.vector4(1, 0, 0, 1)
+cur_white = vmath.vector4(1, 1, 1, 1)
+
+go.property("health", 100)
+go.property("init_speed", 1)
+go.property("cur_color", vmath.vector4(1, 1, 1, 1))
+
+function init(self)
+	go.set("#sprite", "tint", self.cur_color)
+	-- first play particle
+	particlefx.play("#rocket_fire")
+	-- then change color of particle
+	particlefx.set_constant("#rocket_fire", "emitter", "tint", self.cur_color)
+end
+
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+
+function update(self, dt)
+	local p = go.get_position()
+	p.y =  p.y + self.init_speed
+	go.set_position(p)
+end
+
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		particlefx.play("#firework_01")
+		particlefx.set_constant("#firework_01", "emitter", "tint", cur_color)
+		--msg.post("#explosion", "play_sound")
+		go.delete()
+	end
+end
+
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
+
+

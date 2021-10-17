@@ -1,0 +1,28 @@
+[bootstrap]
+main_collection = /collections/in_game.collectionc
+
+[script]
+shared_state = 1
+
+[display]
+width = 720
+height = 1280
+update_frequency = 60
+display_profiles = /builtins/render/default.display_profilesc
+dynamic_orientation = 0
+vsync = 1
+
+[android]
+input_method = HiddenInputField
+package = com.ayiah.paruthidotexe.diwalirockets
+minimum_sdk_version = 24
+
+[project]
+title = Diwali Rockets
+publisher = Paruthidotexe
+developer = @Paruthidotexe
+dependencies#0 = https://github.com/subsoap/defos/archive/v2.5.0.zip
+
+[input]
+game_binding = /inputs/game.input_bindingc
+

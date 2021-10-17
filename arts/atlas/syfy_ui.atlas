@@ -1,0 +1,127 @@
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Backward_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Close_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Facebook_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/FAQ_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Forward_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Google_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Hangar_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Info_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Menu_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/More_Games_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Music_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Notifications_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Ok_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Pause_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Play_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Rating_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Replay_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Settings_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Shop_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Sound_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Twitter_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Upgrade_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/Vibration_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/BTNs/VK_BTN.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/HP_Icon.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/Speed_Icon.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/Star_01.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/Star_02.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/Star_03.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/Table_02.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/_images/space-shooter-game-gui/Window.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+margin: 4
+extrude_borders: 2
+inner_padding: 0

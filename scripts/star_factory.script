@@ -1,0 +1,29 @@
+local frequency = 2
+local min_x = 32
+local max_x = 700
+local min_y = 64
+local max_y = 900
+
+
+function init(self)
+	self.timer = frequency
+	-- make the game deterministic
+	math.randomseed(0)
+end
+
+
+function update(self, dt)
+	self.timer = self.timer - dt
+	if self.timer <= 0 then
+		self.timer = frequency
+		local p = go.get_position()
+		p.x = vmath.lerp(math.random(), min_x, max_x)
+		p.y = vmath.lerp(math.random(), min_y, max_y)
+		local new_star = factory.create("#star_factory", p)
+		--pprint(new_star)
+		--go.animate(new_star, "position.y", go.PLAYBACK_LOOP_PINGPONG, 100, go.EASING_OUTBOUNCE, 2)
+	end
+end
+
+
+
