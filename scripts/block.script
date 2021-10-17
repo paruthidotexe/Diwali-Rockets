@@ -1,8 +1,16 @@
 go.property("health", 1)
 
+color_r = vmath.vector4(1, 0, 0, 1)
+color_g = vmath.vector4(0, 1, 0, 1)
+color_b = vmath.vector4(0, 0, 1, 1)
+color_y = vmath.vector4(1, 1, 0, 1)
+color_w = vmath.vector4(1, 1, 1, 1)
+local cur_color = color_w
+
 function init(self)
 	--print(self.health)
 	label.set_text("#health", self.health)
+	--update_color()
 end
 
 function final(self)
@@ -12,15 +20,14 @@ function final(self)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	--update_color(self)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
-		self.health = self.health - 1		
+		self.health = self.health - 1
 		label.set_text("#health", self.health)
+		
 		--print(self.health)
 		if self.health <= 0 then
 			go.delete()
@@ -28,23 +35,25 @@ function on_message(self, message_id, message, sender)
 	end
 end
 
-function on_input(self, action_id, action)
-	-- Add input-handling code here. The game object this script is attached to
-	-- must have acquired input focus:
-	--
-	--    msg.post(".", "acquire_input_focus")
-	--
-	-- All mapped input bindings will be received. Mouse and touch input will
-	-- be received regardless of where on the screen it happened.
-	-- Learn more: https://defold.com/manuals/input/
-	-- Remove this function if not needed
+
+
+function update_color(self)
+	if self.health < 3 then
+		cur_color = color_r
+	elseif self.health < 6 then
+		cur_color = color_g
+	elseif  self.health < 9 then
+		cur_color = color_b
+	else
+		cur_color = color_w
+	end
+	go.set("#sprite", "tint", cur_color)
 end
+
 
 function on_reload(self)
 	-- Add reload-handling code here
 	-- Learn more: https://defold.com/manuals/hot-reload/
 	-- Remove this function if not needed
 end
-
-
 

@@ -3,8 +3,15 @@ local max_x = 720
 local min_y = 0
 local max_y = 1280
 
-local prev_block_time = 10
-local next_block_time = 10
+local prev_block_time = 0
+local next_block_time = 12
+
+color_r = vmath.vector4(1, 0, 0, 1)
+color_g = vmath.vector4(0, 1, 0, 1)
+color_b = vmath.vector4(0, 0, 1, 1)
+color_y = vmath.vector4(1, 1, 0, 1)
+cur_color = vmath.vector4(0, 0, 1, 1)
+
 
 function init(self)
 	msg.post("@render:", "use_fixed_fit_projection")
