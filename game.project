@@ -21,7 +21,7 @@ minimum_sdk_version = 24
 title = Diwali Rockets
 publisher = Paruthidotexe
 developer = @Paruthidotexe
-dependencies#0 = https://github.com/subsoap/defos/archive/v2.5.0.zip
+dependencies = 
 
 [input]
 game_binding = /inputs/game.input_bindingc

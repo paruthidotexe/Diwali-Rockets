@@ -5,7 +5,7 @@ color_g = vmath.vector4(0, 1, 0, 1)
 color_b = vmath.vector4(0, 0, 1, 1)
 color_y = vmath.vector4(1, 1, 0, 1)
 color_w = vmath.vector4(1, 1, 1, 1)
-local cur_color = color_w
+cur_color = vmath.vector4(1, 1, 1, 1)
 
 function init(self)
 	--print(self.health)
@@ -19,22 +19,22 @@ function final(self)
 	-- Remove this function if not needed
 end
 
+
 function update(self, dt)
 	--update_color(self)
 end
 
+
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
 		self.health = self.health - 1
-		label.set_text("#health", self.health)
-		
+		label.set_text("#health", self.health)		
 		--print(self.health)
 		if self.health <= 0 then
 			go.delete()
 		end
 	end
 end
-
 
 
 function update_color(self)
